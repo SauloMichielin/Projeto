@@ -1,15 +1,13 @@
 import "./index.css"
-
-const user = {
-  name: 'Saulo',
-  lastName: 'Michielin',
-}
+import User from '../User'
 
 function Header() {
   return (
     <p className="Header">
       <div className="Header-texto">
-        {`Opa! Fala comigo ${user.name} ${user.lastName}`}
+      Olá 
+    {' '}
+    <User />
       </div>
     </p>
   )
