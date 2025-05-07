@@ -5,3 +5,8 @@
   padding: 0 5%;
   width: 100%;
 }
+
+.Botões {
+  display: flex;
+  flex-wrap: nowrap;
+}
