@@ -7,8 +7,10 @@ const user = {
 
 function Header() {
   return (
-    <p>
-      {`Opa! Fala comigo ${user.name} ${user.lastName}`}
+    <p className="Header">
+      <div className="Header-texto">
+        {`Opa! Fala comigo ${user.name} ${user.lastName}`}
+      </div>
     </p>
   )
 }

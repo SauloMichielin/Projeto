@@ -1,5 +1,10 @@
-* {
+.Header {
+  background-color: coral;
+  box-shadow: 0 0 8px #333;
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 16px 5%;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }

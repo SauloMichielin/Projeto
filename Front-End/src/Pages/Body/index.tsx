@@ -2,9 +2,9 @@ import "./index.css"
 
 function Body() {
   return (
-    <>
-      <p>Its me, Saulo</p>
-    </>
+    <div className="Body">
+      <p className="Body-texto">Its me, Saulo</p>
+    </div>
   )
 }
 
