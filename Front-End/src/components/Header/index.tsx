@@ -3,13 +3,13 @@ import User from '../User'
 
 function Header() {
   return (
-    <p className="Header">
-      <div className="Header-texto">
-      Olá 
-    {' '}
-    <User />
-      </div>
-    </p>
+    <header className='header'>
+      <p className="header-user">
+        Olá 
+        {' '}
+        <User />
+      </p>
+    </header>
   )
 }
 

@@ -1,6 +1,18 @@
-.App-body {
-  background-color:aquamarine;
+.app {
+  background-color: aquamarine;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.container {
+  box-sizing: border-box;
+  flex: 1;
+  margin-top: 60px;
+  padding: 0 10%;
+  width: 100%;
+}
+
+.books-list {
+  background-color: #fff;
 }

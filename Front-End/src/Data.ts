@@ -42,3 +42,5 @@ export const booksList = [
     isFavorite: false,
   },
 ];
+
+export const bestMovie = "Interestelar";

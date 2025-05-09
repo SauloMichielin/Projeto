@@ -1,5 +1,5 @@
 import "./index.css"
-import Button from "../../components/Button/button"
+import Button from "../../components/Button"
 
 function Body() {
 
