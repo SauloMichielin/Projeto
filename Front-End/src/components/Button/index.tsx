@@ -1,8 +1,10 @@
 type ButtonProps = {
   children: React.ReactNode;
   //OnClick recebe uma função sem parametros por isso parenteses vazios e sem retorno, por tanto Void
-  onClick: () => void;
+  onClick?: () => void;
 }
+
+//Interrogação torna um tipo opcional
 
 import "./index.css"
 

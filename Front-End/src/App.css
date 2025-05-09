@@ -7,7 +7,9 @@
 
 .container {
   box-sizing: border-box;
+  display: flex;
   flex: 1;
+  flex-direction: column;
   margin-top: 60px;
   padding: 0 10%;
   width: 100%;
@@ -15,4 +17,30 @@
 
 .books-list {
   background-color: #fff;
+}
+
+input {
+  padding: 8px;
+  font-size: 20px;
+  margin: 16px;
+}
+
+.books-form {
+  border-top: 1px solid #53abe7;
+  display: flex;
+  flex-direction: column;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.form-message {
+  color: #e22859;
+  border-left: 3px solid #e22859;
+  padding-left: 8px;
+  background-color: #fafafa;
+}
+
+.form-message p {
+  padding: 8px;
 }

@@ -1,10 +1,7 @@
+import type { BookType } from '../../Type';
+
 type Bookprops = {
-  book: {
-    title: string,
-    pages: number,
-    isRead: Boolean,
-    isFavorite: Boolean,
-  }
+  book: BookType
 }
 
 // ✔️ ❤️ ❌

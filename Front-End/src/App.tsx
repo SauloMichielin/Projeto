@@ -6,6 +6,7 @@ import './App.css';
 import Title from './components/title.tsx';
 import Button from './components/Button/index.tsx';
 import { useState } from 'react';
+
 // import interstellarAsset from "./assets/InterstellarAsset.png";
 
 function App() {
@@ -16,15 +17,23 @@ function App() {
   const [bookTitle, setBookTitle] = useState("");
   const [bookPages, setBookPages] = useState(0);
   const [books, setBooks] = useState(booksList);
+  const [errorMessages, setErrorMessages] = useState<string[]>([]);
+  // import type { BookType } from './Type.tsx';
+  // const [books, setBooks] = useState<BookType>([]); //Usado quando não tem estado inicial do estado
 
-  function handleClick() {
+  function updateState() {
     const newBook = {
       title: bookTitle,
       pages: bookPages,
       isRead: false,
       isFavorite: false,
     }
-    setBooks([...books, newBook])
+    setBooks([...books, newBook]);
+  }
+
+  function resetForm() {
+    setBookTitle('');
+    setBookPages(0);
   }
 
   function handleNameChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -33,6 +42,27 @@ function App() {
 
   function handlePagesChange(event: React.ChangeEvent<HTMLInputElement>) {
     setBookPages(event.target.valueAsNumber);
+  }
+
+  function isFormValid() {
+    const errors = [];
+    if (bookTitle === "") {
+      errors.push('O campo Título é Obrigatório')
+    }
+    if (bookPages <= 0) {
+      errors.push('O campo Páginas precisa ser um número maior que zero')
+    }
+    setErrorMessages(errors)
+    return errors.length === 0;
+  }
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (isFormValid()) {
+      updateState();
+      resetForm();
+      setErrorMessages([]);
+    }
   }
 
   return (
@@ -48,25 +78,30 @@ function App() {
             <Book key={book.title} book={book} />
           ))}
         </ul>
-
-        <input
-          type="text"
-          placeholder='Título'
-          value={bookTitle}
-          onChange={handleNameChange}
-        />
-        <input
-          type="number"
-          placeholder='Quantidade de páginas'
-          value={bookPages}
-          onChange={handlePagesChange}
-        />
-
-        <Button
-          onClick={handleClick}
-        >
-          Adicionar
-        </Button>
+        <form className='books-form' onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder='Título'
+            value={bookTitle}
+            onChange={handleNameChange}
+          />
+          <input
+            type="number"
+            placeholder='Quantidade de páginas'
+            value={bookPages}
+            onChange={handlePagesChange}
+          />
+          {errorMessages.length > 0 && (
+            <div className='form-message'>
+              {errorMessages.map(message => (
+                <p key={message}>{message}</p>
+              ))}
+            </div>
+          )}
+          <Button>
+            Adicionar
+          </Button>
+        </form>
       </div>
       <Footer />
     </div>
